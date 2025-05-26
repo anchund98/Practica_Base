@@ -37,9 +37,9 @@ app.get('/pacientes', (req, res) => {
 app.post('/pacientes', (req, res) => {
   const { cedula, nombres, apellidos, fecha_nacimiento, sexo, direccion, telefono, correo } = req.body;
   if (!cedula || !nombres || !apellidos || !fecha_nacimiento || !sexo) {
-    return res.status(400).json({ error: "Campos obligatorios faltantes" });
+    return res.status(400).json({ error: "Campos obligatorios faltantes y actualizar ---" });
   }
-
+// Actualizar como debo hacer en git 
   const sql = `INSERT INTO pacientes (cedula, nombres, apellidos, fecha_nacimiento, sexo, direccion, telefono, correo)
                VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;
 
