@@ -19,7 +19,7 @@ db.connect(err => {
 
 app.get('/medicamentos', (req, res) => {
   db.query('SELECT * FROM medicamentos', (err, results) => {
-    if (err) return res.status(500).send('Error al obtener medicamentos');
+    if (err) return res.status(500).send('Error al obtener medicamentos, necesito mas infromacion...'); //se amplio el mensaje de error
     res.json(results);
   });
 });
@@ -30,7 +30,7 @@ app.post('/medicamentos', (req, res) => {
     'INSERT INTO medicamentos (nombre, descripcion) VALUES (?, ?)',
     [nombre, descripcion],
     (err, result) => {
-      if (err) return res.status(500).send('Error al agregar medicamento');
+      if (err) return res.status(500).send('Error al agregar medicamento, necesito mas infromacion...'); //se amplio el mensaje de error.
       res.json({ id: result.insertId });
     }
   );
